@@ -1,12 +1,5 @@
-//
-//  MulticastDelegate.swift
-//  Readlst
-//
-//  Created by Mads Kleemann on 17/07/2017.
-//  Copyright © 2017 Readlst. All rights reserved.
-//
-
 import Foundation
+
 class MulticastDelegate<T> {
     private var delegates = [WeakObjectWrapper]()
     private let lock = NSRecursiveLock()
@@ -48,6 +41,7 @@ class MulticastDelegate<T> {
         return closure()
     }
 }
+
 extension MulticastDelegate {
     fileprivate class WeakObjectWrapper: Equatable {
         weak var value: AnyObject?
